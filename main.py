@@ -9,6 +9,11 @@ from fastapi import FastAPI, HTTPException
 
 api = FastAPI()
 
+@api.get("/")
+async def inicio():
+    return  {"message": "BIENVENIDO A SU CAJERO DE CONFIANZA"}
+
+
 @api.post("/user/auth/")
 async def auth_user(user_in: UserIn):
 
